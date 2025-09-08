@@ -1,0 +1,7 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import "tailwindcss";
+
+body {
+    background-color: #fbfbff;
+    font-family: "Satoshi", sans-serif;
+}
