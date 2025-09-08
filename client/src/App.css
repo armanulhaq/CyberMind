@@ -5,3 +5,9 @@ body {
     background-color: #fbfbff;
     font-family: "Satoshi", sans-serif;
 }
+
+select {
+    appearance: none; /* For modern browsers */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+}

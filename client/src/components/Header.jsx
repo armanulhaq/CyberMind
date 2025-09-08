@@ -8,19 +8,19 @@ const Navbar = () => {
             </div>
 
             <ul className="flex items-center gap-8 text-gray-800 font-medium">
-                <li className="hidden lg:block cursor-pointer hover:text-purple-600">
+                <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
                     Home
                 </li>
-                <li className="cursor-pointer hover:text-purple-600">
+                <li className="cursor-pointer hover:text-[#A128FF]">
                     Find Jobs
                 </li>
-                <li className="cursor-pointer hover:text-purple-600">
+                <li className="cursor-pointer hover:text-[#A128FF]">
                     Find Talents
                 </li>
-                <li className="hidden lg:block cursor-pointer hover:text-purple-600">
+                <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
                     About us
                 </li>
-                <li className="hidden lg:block cursor-pointer hover:text-purple-600">
+                <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
                     Testimonials
                 </li>
             </ul>
