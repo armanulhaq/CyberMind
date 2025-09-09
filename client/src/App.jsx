@@ -5,6 +5,9 @@ import CreateJob from "./components/CreateJob";
 
 function App() {
     const [isCreateJobOpen, setIsCreateJobOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [location, setLocation] = useState("");
+    const [jobType, setJobType] = useState("");
     const handleOverlayClick = (e) => {
         // Only close if clicking the overlay itself, not the modal content
         if (e.target === e.currentTarget) {
@@ -14,7 +17,15 @@ function App() {
 
     return (
         <>
-            <Main setIsCreateJobOpen={setIsCreateJobOpen} />
+            <Main
+                setIsCreateJobOpen={setIsCreateJobOpen}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                location={location}
+                setLocation={setLocation}
+                jobType={jobType}
+                setJobType={setJobType}
+            />
             {isCreateJobOpen && (
                 <div
                     className="fixed inset-0 bg-gray-500/70 flex items-center justify-center z-50 p-4"

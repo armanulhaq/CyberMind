@@ -15,7 +15,7 @@ const JobCard = ({ job }) => {
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-md p-5 w-[320px] justify-between relative flex flex-col gap-4">
+        <div className="bg-white rounded-2xl shadow-md p-5  justify-between relative flex flex-col gap-4">
             <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-gradient-to-b from-[#FEFEFD] to-[#F1F1F1] p-2 rounded-xl">
                     <img
@@ -50,9 +50,11 @@ const JobCard = ({ job }) => {
                 </span>
             </div>
 
-            <div>{job.jobDescription}</div>
+            <div className="text-sm text-[#5A5A5A] line-clamp-3">
+                {job.jobDescription}
+            </div>
 
-            <button className="bg-[#00AAFF] text-white font-semibold py-2 rounded-lg mt-2 transition-colors hover:bg-[#1976d2] cursor-pointer">
+            <button className="bg-[#00AAFF] text-white py-2 rounded-lg mt-2 transition-colors hover:bg-[#1976d2] cursor-pointer">
                 Apply Now
             </button>
         </div>
