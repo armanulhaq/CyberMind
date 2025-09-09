@@ -10,8 +10,12 @@ const JobCard = ({ job }) => {
         return hours + "h ago";
     }
 
+    function LPA(salary) {
+        return salary / 100000;
+    }
+
     return (
-        <div className="bg-white rounded-2xl shadow-md p-5 w-[320px] relative flex flex-col gap-4">
+        <div className="bg-white rounded-2xl shadow-md p-5 w-[320px] justify-between relative flex flex-col gap-4">
             <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-gradient-to-b from-[#FEFEFD] to-[#F1F1F1] p-2 rounded-xl">
                     <img
@@ -25,7 +29,12 @@ const JobCard = ({ job }) => {
                 </div>
             </div>
 
-            <h2 className="font-bold text-lg text-[#232323]">{job.jobTitle}</h2>
+            <div className="flex flex-col">
+                <h2 className="font-bold text-lg text-[#232323]">
+                    {job.jobTitle}
+                </h2>
+                <div className="text-sm text-[#232323]">{job.companyName}</div>
+            </div>
 
             <div className="flex items-center justify-between text-[#5A5A5A] text-sm">
                 <span className="flex items-center gap-1">
@@ -36,7 +45,8 @@ const JobCard = ({ job }) => {
                     <img src="/Site.png" className="h-4" /> {job.jobType}
                 </span>
                 <span className="flex items-center gap-1">
-                    <img src="/CTC.png" className="h-4" /> {job.maxSalary} LPA
+                    <img src="/CTC.png" className="h-4" /> {LPA(job.maxSalary)}
+                    LPA
                 </span>
             </div>
 

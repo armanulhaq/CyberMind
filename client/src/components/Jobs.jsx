@@ -10,7 +10,7 @@ const Jobs = () => {
     }, []);
     console.log(jobs);
     return (
-        <div className="grid grid-cols-4 gap-6 my-5 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 lg:max-w-[80%] w-full mx-auto">
             {jobs.map((job) => (
                 <JobCard key={job._id} job={job} />
             ))}
