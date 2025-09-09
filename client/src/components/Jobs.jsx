@@ -9,7 +9,7 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
     console.log(jobs);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_BACKEND_URL}/api/all-jobs`)
+        fetch("http://localhost:3000/api/all-jobs")
             .then((res) => res.json())
             .then((data) => {
                 setJobs(data);
