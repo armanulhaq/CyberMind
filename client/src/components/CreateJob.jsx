@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { Calendar } from "lucide-react";
 
 export default function CreateJobOpening({ setIsCreateJobOpen }) {
     const {
@@ -9,7 +8,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
     } = useForm();
 
     const onSubmit = async (data) => {
-        await fetch("http://localhost:3000/api/create-job", {
+        await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/create-job`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
