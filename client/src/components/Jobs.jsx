@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
+import NoJobs from "./NoJobs";
 
-const Jobs = ({ searchQuery, location, jobType }) => {
+const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
         fetch("http://localhost:3000/api/all-jobs")
@@ -19,11 +20,19 @@ const Jobs = ({ searchQuery, location, jobType }) => {
 
         const matchesJobType =
             !jobType || job.jobType.toLowerCase() === jobType.toLowerCase();
-
-        return matchesSearch && matchesLocation && matchesJobType;
+        const matchesSalary =
+            !salaryRange ||
+            (job.maxSalary / 12 >= salaryRange[0] &&
+                job.maxSalary / 12 <= salaryRange[1]);
+        return (
+            matchesSearch && matchesLocation && matchesJobType && matchesSalary
+        );
     });
 
     console.log(filteredJobs);
+    if (filteredJobs.length === 0) {
+        return <NoJobs />;
+    }
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 max-w-[70%] lg:max-w-[80%] mx-auto">
             {filteredJobs.map((job) => (

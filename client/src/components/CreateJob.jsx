@@ -189,9 +189,18 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                     </button>
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white px-8 py-2 rounded-lg hover:bg-blue-600 cursor-pointer"
+                        className="bg-[#00AAFF] text-white px-8 py-2 rounded-lg hover:bg-[#1976d2] cursor-pointer"
                     >
-                        Publish
+                        <div className="flex items-center gap-2">
+                            <span>Publish</span>
+                            <span>
+                                <img
+                                    src="/Left.png"
+                                    alt="Left Arrow"
+                                    className="h-2"
+                                />
+                            </span>
+                        </div>
                     </button>
                 </div>
             </form>

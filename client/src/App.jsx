@@ -8,6 +8,8 @@ function App() {
     const [searchQuery, setSearchQuery] = useState("");
     const [location, setLocation] = useState("");
     const [jobType, setJobType] = useState("");
+    const [salaryRange, setSalaryRange] = useState([50000, 100000]);
+
     const handleOverlayClick = (e) => {
         // Only close if clicking the overlay itself, not the modal content
         if (e.target === e.currentTarget) {
@@ -25,6 +27,8 @@ function App() {
                 setLocation={setLocation}
                 jobType={jobType}
                 setJobType={setJobType}
+                salaryRange={salaryRange}
+                setSalaryRange={setSalaryRange}
             />
             {isCreateJobOpen && (
                 <div

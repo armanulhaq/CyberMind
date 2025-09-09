@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/Header";
 import Filter from "../components/Filter";
 import Jobs from "../components/Jobs";
@@ -11,6 +10,8 @@ const Main = ({
     setLocation,
     jobType,
     setJobType,
+    salaryRange,
+    setSalaryRange,
 }) => {
     return (
         <div>
@@ -22,11 +23,14 @@ const Main = ({
                 setLocation={setLocation}
                 jobType={jobType}
                 setJobType={setJobType}
+                salaryRange={salaryRange}
+                setSalaryRange={setSalaryRange}
             />
             <Jobs
                 searchQuery={searchQuery}
                 location={location}
                 jobType={jobType}
+                salaryRange={salaryRange}
             />
         </div>
     );

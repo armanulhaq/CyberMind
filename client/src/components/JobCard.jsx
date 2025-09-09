@@ -15,7 +15,7 @@ const JobCard = ({ job }) => {
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-md p-5  justify-between relative flex flex-col gap-4">
+        <div className="bg-white rounded-2xl border border-gray-100 p-5  justify-between relative flex flex-col gap-4">
             <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-gradient-to-b from-[#FEFEFD] to-[#F1F1F1] p-2 rounded-xl">
                     <img

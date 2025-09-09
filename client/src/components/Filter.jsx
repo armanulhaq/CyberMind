@@ -1,4 +1,3 @@
-import { useState } from "react";
 import DoubleRangeSlider from "./DoubleRangeSlider";
 import { Search, ChevronDown } from "lucide-react";
 
@@ -9,18 +8,11 @@ const FilterBar = ({
     setLocation,
     jobType,
     setJobType,
+    salaryRange,
+    setSalaryRange,
 }) => {
-    const [salaryRange, setSalaryRange] = useState([50000, 100000]);
-
-    // const handleSalaryChange = (e, index) => {
-    //     const newRange = [...salaryRange];
-    //     newRange[index] = Number(e.target.value);
-    //     setSalaryRange(newRange);
-    // };
-
     return (
-        <div className="my-4 flex flex-col lg:flex-row gap-4 lg:gap-6 px-4 sm:px-6 lg:px-10 py-5 bg-white shadow-[0_4px_20px_rgba(127,127,127,0.15)]">
-            {/* Search Input */}
+        <div className="my-4 flex flex-col lg:flex-row gap-4 lg:gap-6 px-4 sm:px-6 lg:px-10 py-5 bg-white shadow-[0_0px_100px_rgba(127,127,127,0.15)]">
             <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:pr-6">
                 <Search className="text-gray-500 shrink-0" size={18} />
                 <input
@@ -32,7 +24,6 @@ const FilterBar = ({
                 />
             </div>
 
-            {/* Location Dropdown */}
             <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:px-4">
                 <img src="/MapPin.png" alt="Location" className="w-4" />
                 <div className="relative w-full">
@@ -56,7 +47,6 @@ const FilterBar = ({
                 </div>
             </div>
 
-            {/* Job Type Dropdown */}
             <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:px-4">
                 <img src="/User.png" alt="Job Type" className="h-4" />
                 <div className="relative w-full">
@@ -76,16 +66,17 @@ const FilterBar = ({
                     />
                 </div>
             </div>
-
-            {/* Salary Range */}
             <div className="flex flex-col w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-0">
                 <div className="flex justify-between text-[#686868] text-sm">
-                    <span>Salary Per Month</span>
-                    <span className="font-medium">
-                        ₹{salaryRange[0] / 1000}k - ₹{salaryRange[1] / 1000}k
+                    <span className="text-[#222222]">Salary Per Month</span>
+                    <span className="font-medium text-[#222222]">
+                        ₹{salaryRange[0] / 1000}K - ₹{salaryRange[1] / 1000}K
                     </span>
                 </div>
-                <DoubleRangeSlider />
+                <DoubleRangeSlider
+                    salaryRange={salaryRange}
+                    setSalaryRange={setSalaryRange}
+                />
             </div>
         </div>
     );
