@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DoubleRangeSlider from "./DoubleRangeSlider";
 import { Search, ChevronDown } from "lucide-react";
 
 const FilterBar = ({
@@ -11,11 +12,11 @@ const FilterBar = ({
 }) => {
     const [salaryRange, setSalaryRange] = useState([50000, 100000]);
 
-    const handleSalaryChange = (e, index) => {
-        const newRange = [...salaryRange];
-        newRange[index] = Number(e.target.value);
-        setSalaryRange(newRange);
-    };
+    // const handleSalaryChange = (e, index) => {
+    //     const newRange = [...salaryRange];
+    //     newRange[index] = Number(e.target.value);
+    //     setSalaryRange(newRange);
+    // };
 
     return (
         <div className="my-4 flex flex-col lg:flex-row gap-4 lg:gap-6 px-4 sm:px-6 lg:px-10 py-5 bg-white shadow-[0_4px_20px_rgba(127,127,127,0.15)]">
@@ -33,11 +34,7 @@ const FilterBar = ({
 
             {/* Location Dropdown */}
             <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:px-4">
-                <img
-                    src="/MapPin.png"
-                    alt="Location"
-                    className="h-4 w-4 shrink-0"
-                />
+                <img src="/MapPin.png" alt="Location" className="w-4" />
                 <div className="relative w-full">
                     <select
                         className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent text-sm"
@@ -61,11 +58,7 @@ const FilterBar = ({
 
             {/* Job Type Dropdown */}
             <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:px-4">
-                <img
-                    src="/User.png"
-                    alt="Job Type"
-                    className="h-4 w-4 shrink-0"
-                />
+                <img src="/User.png" alt="Job Type" className="h-4" />
                 <div className="relative w-full">
                     <select
                         className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent text-sm"
@@ -92,15 +85,7 @@ const FilterBar = ({
                         ₹{salaryRange[0] / 1000}k - ₹{salaryRange[1] / 1000}k
                     </span>
                 </div>
-                <input
-                    type="range"
-                    min="50000"
-                    max="100000"
-                    step="5000"
-                    value={salaryRange[0]}
-                    onChange={(e) => handleSalaryChange(e, 0)}
-                    className="w-full accent-indigo-500"
-                />
+                <DoubleRangeSlider />
             </div>
         </div>
     );
