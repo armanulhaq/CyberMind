@@ -6,6 +6,7 @@ import JobCardSkeleton from "./JobSkeleton";
 const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
+    console.log(jobs);
 
     useEffect(() => {
         fetch("http://localhost:3000/api/all-jobs")
@@ -38,7 +39,7 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
 
     if (loading) {
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 max-w-[70%] lg:max-w-[80%] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-12 max-w-[70%] lg:max-w-[80%] mx-auto">
                 {Array.from({ length: 8 }).map((_, idx) => (
                     <JobCardSkeleton key={idx} />
                 ))}
@@ -49,7 +50,7 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
         return <NoJobs />;
     }
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 max-w-[70%] lg:max-w-[80%] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-12 max-w-[70%] lg:max-w-[80%] mx-auto">
             {filteredJobs.map((job) => (
                 <JobCard key={job._id} job={job} />
             ))}

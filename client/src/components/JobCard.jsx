@@ -3,19 +3,19 @@ const JobCard = ({ job }) => {
         const postDate = new Date(dateString);
         const now = new Date();
         const diff = now - postDate;
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        if (hours < 1) {
-            return "<1h ago";
+        console.log(diff);
+        if (diff < 60 * 60 * 1000) {
+            return "Just now";
         }
-        return hours + "h ago";
+        return Math.floor(diff / (1000 * 60 * 60)) + "h ago";
     }
 
     function LPA(salary) {
         return salary / 100000;
     }
-
+    console.log(job.createdAt);
     return (
-        <div className="bg-white rounded-2xl border border-gray-100 p-5  justify-between relative flex flex-col gap-4">
+        <div className="bg-white rounded-2xl border border-gray-100 p-5 justify-between relative flex flex-col gap-4 shadow-[0px_0px_14px_0px_rgba(211,211,211,0.15)]">
             <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-gradient-to-b from-[#FEFEFD] to-[#F1F1F1] p-2 rounded-xl">
                     <img

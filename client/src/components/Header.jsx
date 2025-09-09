@@ -1,11 +1,11 @@
 const Navbar = ({ setIsCreateJobOpen }) => {
     return (
-        <nav className="max-w-[95%] lg:max-w-4xl mx-auto my-5 flex items-center justify-between px-8 py-4 border border-[#FCFCFC] shadow-[0_0_20px_rgba(127,127,127,0.15)] rounded-full bg-white">
+        <nav className="max-w-[95%] lg:max-w-5xl mx-auto my-5 flex items-center justify-between px-6 py-4 border border-[#FCFCFC] shadow-[0_0_8px_rgba(127,127,127,0.15)] rounded-full bg-white">
             <div className="flex items-center">
-                <img src="/icon.png" alt="Logo" className="h-8 w-8" />
+                <img src="/icon.png" alt="Logo" className="h-10 w-10" />
             </div>
 
-            <ul className="flex items-center gap-8 text-gray-800 font-medium">
+            <ul className="flex items-center gap-20 text-gray-800 font-medium">
                 <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
                     Home
                 </li>

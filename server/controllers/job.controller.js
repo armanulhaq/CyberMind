@@ -16,7 +16,6 @@ const getAllJobs = async (req, res) => {
 const createJob = async (req, res) => {
     try {
         const job = await Job.create(req.body);
-        console.log(job);
         res.status(200).json({ message: "Job created successfully" });
     } catch (error) {
         console.log(error);

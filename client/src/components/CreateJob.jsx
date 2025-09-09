@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Calendar } from "lucide-react";
 
 export default function CreateJobOpening({ setIsCreateJobOpen }) {
     const {
@@ -25,11 +26,10 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                 Create Job Opening
             </h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-2 gap-6">
                     <div>
-                        <label className="block font-medium">Job Title</label>{" "}
-                        {/* track this input under the key jobTitle */}
+                        <label className="block font-medium">Job Title</label>
                         <input
                             type="text"
                             placeholder="Enter the job title"
@@ -54,7 +54,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             {...register("companyName", {
                                 required: "Company name is required",
                             })}
-                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
+                            className="w-full border text-[16px] border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.companyName && (
                             <p className="text-red-500 text-sm">
@@ -90,7 +90,9 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                     <div>
                         <label className="block font-medium">Job Type</label>
                         <select
-                            {...register("jobType")}
+                            {...register("jobType", {
+                                required: "Job title is required",
+                            })}
                             className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         >
                             <option>Job Type</option>
@@ -109,15 +111,26 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                 <div className="grid grid-cols-2 gap-6">
                     <div className="grid grid-cols-2 gap-3">
                         <div>
-                            <label className="block font-medium">
-                                Min Salary
+                            <label className="block font-medium text-gray-600">
+                                Salary Range
                             </label>
-                            <input
-                                type="number"
-                                placeholder="₹0"
-                                {...register("minSalary")}
-                                className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
-                            />
+                            <div className="relative mt-1">
+                                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
+                                    <img
+                                        src="UpDown.png"
+                                        alt="UpDown"
+                                        className="h-3"
+                                    />
+                                </span>
+                                <input
+                                    type="number"
+                                    placeholder="0"
+                                    {...register("minSalary", {
+                                        required: "Min salary is required",
+                                    })}
+                                    className="w-full pl-8 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                />
+                            </div>
                             {errors.minSalary && (
                                 <p className="text-red-500 text-sm">
                                     {errors.minSalary.message}
@@ -125,15 +138,26 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             )}
                         </div>
                         <div>
-                            <label className="block font-medium">
+                            <label className="block font-medium text-transparent">
                                 Max Salary
                             </label>
-                            <input
-                                type="number"
-                                placeholder="₹12,00,000"
-                                {...register("maxSalary")}
-                                className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
-                            />
+                            <div className="relative mt-1">
+                                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10">
+                                    <img
+                                        src="UpDown.png"
+                                        alt="UpDown"
+                                        className="h-3"
+                                    />
+                                </span>
+                                <input
+                                    type="number"
+                                    placeholder="12,00,000"
+                                    {...register("maxSalary", {
+                                        required: "Max salary is required",
+                                    })}
+                                    className="w-full border pl-8 border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                />
+                            </div>
                             {errors.maxSalary && (
                                 <p className="text-red-500 text-sm">
                                     {errors.maxSalary.message}
@@ -147,7 +171,9 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                         </label>
                         <input
                             type="date"
-                            {...register("deadline")}
+                            {...register("deadline", {
+                                required: "Deadline is required",
+                            })}
                             className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.deadline && (
@@ -162,8 +188,10 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                     <label className="block font-medium">Job Description</label>
                     <textarea
                         rows={4}
-                        placeholder="Please share a description..."
-                        {...register("jobDescription")}
+                        placeholder="Please share a description to let the candidate know more about the job role"
+                        {...register("jobDescription", {
+                            required: "Job description is required",
+                        })}
                         className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                     ></textarea>
                     {errors.jobDescription && (
@@ -189,6 +217,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                     </button>
                     <button
                         type="submit"
+                        onClick={handleSubmit(onSubmit)}
                         className="bg-[#00AAFF] text-white px-8 py-2 rounded-lg hover:bg-[#1976d2] cursor-pointer"
                     >
                         <div className="flex items-center gap-2">
@@ -203,7 +232,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                         </div>
                     </button>
                 </div>
-            </form>
+            </div>
         </div>
     );
 }
