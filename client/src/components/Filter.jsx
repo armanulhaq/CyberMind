@@ -11,7 +11,7 @@ const FilterBar = () => {
     };
 
     return (
-        <div className="my-6 flex items-center justify-between gap-6 px-10 py-6 bg-white shadow-[0_4px_20px_rgba(127,127,127,0.15)]">
+        <div className="my-4 flex items-center justify-between gap-6 px-10 py-5 bg-white shadow-[0_4px_20px_rgba(127,127,127,0.15)]">
             <div className="flex items-center gap-3 flex-1 border-r border-gray-200 pr-6">
                 <Search className="text-gray-500" size={18} />
                 <input
@@ -45,10 +45,9 @@ const FilterBar = () => {
                 <div className="relative w-full">
                     <select className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent text-sm">
                         <option>Job Type</option>
-                        <option>Full-Time</option>
-                        <option>Part-Time</option>
-                        <option>Internship</option>
+                        <option>Onsite</option>
                         <option>Remote</option>
+                        <option>Hybrid</option>
                     </select>
                     <ChevronDown
                         className="absolute right-2 top-1/2 -translate-y-1/2 text-[#686868] pointer-events-none"

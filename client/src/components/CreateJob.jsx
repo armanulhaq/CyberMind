@@ -24,11 +24,11 @@ export default function CreateJobOpening() {
                         {/* track this input under the key jobTitle */}
                         <input
                             type="text"
-                            placeholder="Full Stack Developer, Frontend Developer, Backend Developer"
+                            placeholder="Enter the job title"
                             {...register("jobTitle", {
                                 required: "Job title is required",
                             })}
-                            className="w-full border rounded-lg px-3 py-2 mt-1"
+                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.jobTitle && (
                             <p className="text-red-500 text-sm">
@@ -46,7 +46,7 @@ export default function CreateJobOpening() {
                             {...register("companyName", {
                                 required: "Company name is required",
                             })}
-                            className="w-full border rounded-lg px-3 py-2 mt-1"
+                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.companyName && (
                             <p className="text-red-500 text-sm">
@@ -63,7 +63,7 @@ export default function CreateJobOpening() {
                             {...register("location", {
                                 required: "Location is required",
                             })}
-                            className="w-full border rounded-lg px-3 py-2 mt-1"
+                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         >
                             <option value="">Choose Preferred Location</option>
                             <option>Bengaluru</option>
@@ -83,13 +83,12 @@ export default function CreateJobOpening() {
                         <label className="block font-medium">Job Type</label>
                         <select
                             {...register("jobType")}
-                            className="w-full border rounded-lg px-3 py-2 mt-1"
+                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         >
                             <option>Job Type</option>
-                            <option>Full-Time</option>
-                            <option>Part-Time</option>
-                            <option>Internship</option>
+                            <option>Onsite</option>
                             <option>Remote</option>
+                            <option>Hybrid</option>
                         </select>
                         {errors.jobType && (
                             <p className="text-red-500 text-sm">
@@ -109,7 +108,7 @@ export default function CreateJobOpening() {
                                 type="number"
                                 placeholder="₹0"
                                 {...register("minSalary")}
-                                className="w-full border rounded-lg px-3 py-2 mt-1"
+                                className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                             />
                             {errors.minSalary && (
                                 <p className="text-red-500 text-sm">
@@ -125,7 +124,7 @@ export default function CreateJobOpening() {
                                 type="number"
                                 placeholder="₹12,00,000"
                                 {...register("maxSalary")}
-                                className="w-full border rounded-lg px-3 py-2 mt-1"
+                                className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                             />
                             {errors.maxSalary && (
                                 <p className="text-red-500 text-sm">
@@ -141,7 +140,7 @@ export default function CreateJobOpening() {
                         <input
                             type="date"
                             {...register("deadline")}
-                            className="w-full border rounded-lg px-3 py-2 mt-1"
+                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.deadline && (
                             <p className="text-red-500 text-sm">
@@ -157,7 +156,7 @@ export default function CreateJobOpening() {
                         rows={4}
                         placeholder="Please share a description..."
                         {...register("jobDescription")}
-                        className="w-full border rounded-lg px-3 py-2 mt-1"
+                        className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                     ></textarea>
                     {errors.jobDescription && (
                         <p className="text-red-500 text-sm">

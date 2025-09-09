@@ -25,7 +25,7 @@ const Navbar = ({ setIsCreateJobOpen }) => {
 
             <button
                 onClick={() => setIsCreateJobOpen(true)}
-                className="bg-gradient-to-b from-[#A128FF] to-[#6100AD] text-white font-medium px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300"
+                className="bg-gradient-to-b from-[#A128FF] to-[#6100AD] text-white font-medium px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300 cursor-pointer"
             >
                 Create Jobs
             </button>
