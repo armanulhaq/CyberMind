@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import NoJobs from "./NoJobs";
+import JobCardSkeleton from "./JobSkeleton";
 
 const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
     const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch("http://localhost:3000/api/all-jobs")
             .then((res) => res.json())
-            .then((data) => setJobs(data));
+            .then((data) => {
+                setJobs(data);
+                setLoading(false);
+            });
     }, []);
+
     const filteredJobs = jobs.filter((job) => {
         const matchesSearch =
             !searchQuery ||
@@ -29,7 +36,15 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
         );
     });
 
-    console.log(filteredJobs);
+    if (loading) {
+        return (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 max-w-[70%] lg:max-w-[80%] mx-auto">
+                {Array.from({ length: 8 }).map((_, idx) => (
+                    <JobCardSkeleton key={idx} />
+                ))}
+            </div>
+        );
+    }
     if (filteredJobs.length === 0) {
         return <NoJobs />;
     }
