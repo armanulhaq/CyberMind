@@ -1,14 +1,22 @@
 import { useForm } from "react-hook-form";
 
-export default function CreateJobOpening() {
+export default function CreateJobOpening({ setIsCreateJobOpen }) {
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Form Data:", data);
+    const onSubmit = async (data) => {
+        await fetch("http://localhost:3000/api/create-job", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        setIsCreateJobOpen(false);
+        window.location.reload();
     };
 
     return (
@@ -168,15 +176,22 @@ export default function CreateJobOpening() {
                 <div className="flex justify-between mt-6">
                     <button
                         type="button"
-                        className="border px-4 py-2 rounded-lg hover:bg-gray-100"
+                        className="border flex items-center gap-2 px-6 py-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                     >
-                        Save Draft
+                        Save Draft{" "}
+                        <span>
+                            <img
+                                src="/Down.png"
+                                alt="Down Arrow"
+                                className="h-2"
+                            />
+                        </span>
                     </button>
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+                        className="bg-blue-500 text-white px-8 py-2 rounded-lg hover:bg-blue-600 cursor-pointer"
                     >
-                        Publish »
+                        Publish
                     </button>
                 </div>
             </form>

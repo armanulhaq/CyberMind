@@ -1,20 +1,23 @@
 import mongoose from "mongoose";
 
 const jobSchema = new mongoose.Schema({
-    _id: { type: mongoose.Schema.Types.ObjectId, required: true },
-    company_logo: { type: String },
-    job_title: { type: String, required: true },
-    job_type: {
+    jobTitle: { type: String, required: true },
+    companyName: { type: String, required: true },
+    location: {
         type: String,
-        enum: ["Full Time", "Part Time", "Internship", "Contract"],
+        enum: ["Bengaluru", "Hyderabad", "Delhi", "Mumbai", "Chennai", "Pune"],
         required: true,
     },
-    time_posted: { type: Date.now(), required: true },
-    experienceStart: { type: Number, required: true },
-    experienceEnd: { type: Number, required: true },
-    location: { type: String, required: true },
-    salary: { type: Number, required: true },
-    description: { type: String, required: true },
+    jobType: {
+        type: String,
+        enum: ["Onsite", "Remote", "Hybrid"],
+        required: true,
+    },
+    minSalary: { type: Number, required: true },
+    maxSalary: { type: Number, required: true },
+    deadline: { type: Date, required: true },
+    jobDescription: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now },
 });
 
 const Job = mongoose.model("Job", jobSchema);
