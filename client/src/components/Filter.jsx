@@ -17,13 +17,11 @@ const FilterBar = ({
         setSalaryRange(newRange);
     };
 
-    console.log(searchQuery, location, jobType);
-
     return (
-        <div className="my-4 flex items-center justify-between gap-6 px-10 py-5 bg-white shadow-[0_4px_20px_rgba(127,127,127,0.15)]">
+        <div className="my-4 flex flex-col lg:flex-row gap-4 lg:gap-6 px-4 sm:px-6 lg:px-10 py-5 bg-white shadow-[0_4px_20px_rgba(127,127,127,0.15)]">
             {/* Search Input */}
-            <div className="flex items-center gap-3 flex-1 border-r border-gray-200 pr-6">
-                <Search className="text-gray-500" size={18} />
+            <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:pr-6">
+                <Search className="text-gray-500 shrink-0" size={18} />
                 <input
                     type="text"
                     placeholder="Search By Job Title, Role"
@@ -34,8 +32,12 @@ const FilterBar = ({
             </div>
 
             {/* Location Dropdown */}
-            <div className="flex items-center gap-3 flex-1 border-r border-gray-200 px-4">
-                <img src="/MapPin.png" alt="Location" className="h-4 w-4" />
+            <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:px-4">
+                <img
+                    src="/MapPin.png"
+                    alt="Location"
+                    className="h-4 w-4 shrink-0"
+                />
                 <div className="relative w-full">
                     <select
                         className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent text-sm"
@@ -58,8 +60,12 @@ const FilterBar = ({
             </div>
 
             {/* Job Type Dropdown */}
-            <div className="flex items-center gap-3 flex-1 border-r border-gray-200 px-4">
-                <img src="/User.png" alt="Job Type" className="h-4 w-4" />
+            <div className="flex items-center gap-3 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:px-4">
+                <img
+                    src="/User.png"
+                    alt="Job Type"
+                    className="h-4 w-4 shrink-0"
+                />
                 <div className="relative w-full">
                     <select
                         className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent text-sm"
@@ -79,7 +85,7 @@ const FilterBar = ({
             </div>
 
             {/* Salary Range */}
-            <div className="flex flex-col gap-2 flex-1">
+            <div className="flex flex-col w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-0">
                 <div className="flex justify-between text-[#686868] text-sm">
                     <span>Salary Per Month</span>
                     <span className="font-medium">
@@ -93,7 +99,7 @@ const FilterBar = ({
                     step="5000"
                     value={salaryRange[0]}
                     onChange={(e) => handleSalaryChange(e, 0)}
-                    className="w-full"
+                    className="w-full accent-indigo-500"
                 />
             </div>
         </div>

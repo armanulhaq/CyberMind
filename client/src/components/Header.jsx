@@ -1,6 +1,6 @@
 const Navbar = ({ setIsCreateJobOpen }) => {
     return (
-        <nav className="max-w-4xl mx-auto my-5 flex items-center justify-between px-8 py-4 border border-[#FCFCFC] shadow-[0_0_20px_rgba(127,127,127,0.15)] rounded-full bg-white">
+        <nav className="max-w-[95%] lg:max-w-4xl mx-auto my-5 flex items-center justify-between px-8 py-4 border border-[#FCFCFC] shadow-[0_0_20px_rgba(127,127,127,0.15)] rounded-full bg-white">
             <div className="flex items-center">
                 <img src="/icon.png" alt="Logo" className="h-8 w-8" />
             </div>

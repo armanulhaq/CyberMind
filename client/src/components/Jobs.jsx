@@ -25,7 +25,7 @@ const Jobs = ({ searchQuery, location, jobType }) => {
 
     console.log(filteredJobs);
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 max-w-[80%] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5 max-w-[70%] lg:max-w-[80%] mx-auto">
             {filteredJobs.map((job) => (
                 <JobCard key={job._id} job={job} />
             ))}
