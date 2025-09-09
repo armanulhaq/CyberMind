@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 connectDB();
 
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL }));
+app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
     res.send("API is working fine!");
