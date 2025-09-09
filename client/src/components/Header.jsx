@@ -1,8 +1,6 @@
-import React from "react";
-
-const Navbar = () => {
+const Navbar = ({ setIsCreateJobOpen }) => {
     return (
-        <nav className="max-w-4xl mx-auto my-5 flex items-center justify-between px-8 py-4 border border-[#FCFCFC] shadow-[0_0_20px_rgba(127,127,127,0.15)]  bg-white rounded-full">
+        <nav className="max-w-4xl mx-auto my-5 flex items-center justify-between px-8 py-4 border border-[#FCFCFC] shadow-[0_0_20px_rgba(127,127,127,0.15)] rounded-full bg-white">
             <div className="flex items-center">
                 <img src="/icon.png" alt="Logo" className="h-8 w-8" />
             </div>
@@ -25,7 +23,10 @@ const Navbar = () => {
                 </li>
             </ul>
 
-            <button className="bg-gradient-to-b from-[#A128FF] to-[#6100AD] text-white font-medium px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
+            <button
+                onClick={() => setIsCreateJobOpen(true)}
+                className="bg-gradient-to-b from-[#A128FF] to-[#6100AD] text-white font-medium px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300"
+            >
                 Create Jobs
             </button>
         </nav>

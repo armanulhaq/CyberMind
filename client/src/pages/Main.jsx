@@ -3,10 +3,10 @@ import Header from "../components/Header";
 import Filter from "../components/Filter";
 import Jobs from "../components/Jobs";
 
-const Main = () => {
+const Main = ({ setIsCreateJobOpen }) => {
     return (
         <div>
-            <Header />
+            <Header setIsCreateJobOpen={setIsCreateJobOpen} />
             <Filter />
             <Jobs />
         </div>
