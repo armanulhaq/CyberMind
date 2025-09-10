@@ -56,9 +56,10 @@ const FilterBar = ({
                         onChange={(e) => setJobType(e.target.value)}
                     >
                         <option value="">Job Type</option>
-                        <option value="Onsite">Onsite</option>
-                        <option value="Remote">Remote</option>
-                        <option value="Hybrid">Hybrid</option>
+                        <option>Full Time</option>
+                        <option>Part Time</option>
+                        <option>Internship</option>
+                        <option>Contract</option>
                     </select>
                     <ChevronDown
                         className="absolute right-2 top-1/2 -translate-y-1/2 text-[#686868] pointer-events-none"

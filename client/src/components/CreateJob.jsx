@@ -95,9 +95,10 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         >
                             <option value="">Job Type</option>
-                            <option>Onsite</option>
-                            <option>Remote</option>
-                            <option>Hybrid</option>
+                            <option>Full Time</option>
+                            <option>Part Time</option>
+                            <option>Internship</option>
+                            <option>Contract</option>
                         </select>
                         {errors.jobType && (
                             <p className="text-red-500 ml-2 text-xs">
