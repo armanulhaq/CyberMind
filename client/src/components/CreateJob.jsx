@@ -109,7 +109,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-3">
                         <div>
                             <label className="block font-medium text-gray-600">
                                 Salary Range
