@@ -38,7 +38,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.jobTitle && (
-                            <p className="text-red-500 text-sm">
+                            <p className="text-red-500 ml-2 text-xs">
                                 {errors.jobTitle.message}
                             </p>
                         )}
@@ -56,7 +56,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             className="w-full border text-[16px] border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                         />
                         {errors.companyName && (
-                            <p className="text-red-500 text-sm">
+                            <p className="text-red-500 ml-2 text-xs">
                                 {errors.companyName.message}
                             </p>
                         )}
@@ -81,7 +81,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             <option>Pune</option>
                         </select>
                         {errors.location && (
-                            <p className="text-red-500 text-sm">
+                            <p className="text-red-500 ml-2 text-xs">
                                 {errors.location.message}
                             </p>
                         )}
@@ -100,7 +100,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                             <option>Hybrid</option>
                         </select>
                         {errors.jobType && (
-                            <p className="text-red-500 text-sm">
+                            <p className="text-red-500 ml-2 text-xs">
                                 {errors.jobType.message}
                             </p>
                         )}
@@ -125,13 +125,13 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                                     type="number"
                                     placeholder="0"
                                     {...register("minSalary", {
-                                        required: "Min salary is required",
+                                        required: "Min. salary is required",
                                     })}
                                     className="w-full pl-8 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 />
                             </div>
                             {errors.minSalary && (
-                                <p className="text-red-500 text-sm">
+                                <p className="text-red-500 ml-2 text-xs">
                                     {errors.minSalary.message}
                                 </p>
                             )}
@@ -152,31 +152,37 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                                     type="number"
                                     placeholder="12,00,000"
                                     {...register("maxSalary", {
-                                        required: "Max salary is required",
+                                        required: "Max. salary is required",
                                     })}
                                     className="w-full border pl-8 border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 />
                             </div>
                             {errors.maxSalary && (
-                                <p className="text-red-500 text-sm">
+                                <p className="text-red-500 ml-2 text-xs">
                                     {errors.maxSalary.message}
                                 </p>
                             )}
                         </div>
                     </div>
                     <div>
-                        <label className="block font-medium">
+                        <label className="block font-medium text-gray-600">
                             Application Deadline
                         </label>
-                        <input
-                            type="date"
-                            {...register("deadline", {
-                                required: "Deadline is required",
-                            })}
-                            className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
-                        />
+                        <div className="relative mt-1">
+                            <input
+                                type="date"
+                                {...register("deadline", {
+                                    required: "Deadline is required",
+                                })}
+                                className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [&::-webkit-calendar-picker-indicator]:opacity-0"
+                            />
+                            <img
+                                src="/Calendar.png"
+                                className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+                            />
+                        </div>
                         {errors.deadline && (
-                            <p className="text-red-500 text-sm">
+                            <p className="text-red-500 ml-2 text-xs">
                                 {errors.deadline.message}
                             </p>
                         )}
@@ -194,7 +200,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                         className="w-full border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 mt-1"
                     ></textarea>
                     {errors.jobDescription && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-red-500 ml-2 text-xs">
                             {errors.jobDescription.message}
                         </p>
                     )}

@@ -1,7 +1,10 @@
 const Navbar = ({ setIsCreateJobOpen }) => {
     return (
         <nav className="max-w-[95%] lg:max-w-5xl mx-auto my-5 flex items-center justify-between px-6 py-4 border border-[#FCFCFC] shadow-[0_0_8px_rgba(127,127,127,0.15)] rounded-full bg-white">
-            <div className="flex items-center">
+            <div
+                className="flex items-center cursor-pointer"
+                onClick={() => window.location.reload()}
+            >
                 <img src="/icon.png" alt="Logo" className="h-10 w-10" />
             </div>
 
@@ -9,13 +12,13 @@ const Navbar = ({ setIsCreateJobOpen }) => {
                 <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
                     Home
                 </li>
-                <li className="cursor-pointer hover:text-[#A128FF]">
+                <li className="hidden md:block cursor-pointer hover:text-[#A128FF]">
                     Find Jobs
                 </li>
-                <li className="cursor-pointer hover:text-[#A128FF]">
+                <li className="hidden md:block cursor-pointer hover:text-[#A128FF]">
                     Find Talents
                 </li>
-                <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
+                <li className="hidden md:block cursor-pointer hover:text-[#A128FF]">
                     About us
                 </li>
                 <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
