@@ -19,8 +19,7 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
     const filteredJobs = jobs.filter((job) => {
         const matchesSearch =
             !searchQuery ||
-            job.jobTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            job.companyName.toLowerCase().includes(searchQuery.toLowerCase());
+            job.jobTitle.toLowerCase().startsWith(searchQuery.toLowerCase());
 
         const matchesLocation =
             !location || job.location.toLowerCase() === location.toLowerCase();
