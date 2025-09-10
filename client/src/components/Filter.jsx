@@ -12,7 +12,7 @@ const FilterBar = ({
     setSalaryRange,
 }) => {
     return (
-        <div className="my-4 flex flex-col lg:flex-row gap-4 lg:gap-6 px-4 sm:px-6 lg:px-12 py-5 bg-white shadow-[0_8px_20px_-10px_rgba(127,127,127,0.15)]">
+        <div className="my-4 flex flex-col xl:flex-row gap-4 lg:gap-6 px-4 sm:px-6 lg:px-12 py-5 bg-white shadow-[0_8px_20px_-10px_rgba(127,127,127,0.15)]">
             <div className="flex items-center gap-7 w-full lg:flex-1 border border-gray-200 rounded-lg px-3 py-2 lg:border-r lg:rounded-none lg:border-t-0 lg:border-b-0 lg:border-l-0 lg:pr-6 font-medium text-base leading-none text-center">
                 <Search className="text-gray-500 shrink-0 w-5" />
                 <input

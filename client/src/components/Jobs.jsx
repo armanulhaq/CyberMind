@@ -52,7 +52,7 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-12 max-w-[90%] lg:max-w-[80%] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 my-12 max-w-[90%] lg:max-w-[80%] mx-auto">
             {filteredJobs.map((job) => (
                 <JobCard key={job._id} job={job} />
             ))}

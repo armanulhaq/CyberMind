@@ -2,7 +2,7 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 
 export default function DoubleRangeSlider({ salaryRange, setSalaryRange }) {
     return (
-        <div className="w-80">
+        <div className="w-full">
             <SliderPrimitive.Root
                 className="relative flex items-center w-full h-5"
                 value={salaryRange}
