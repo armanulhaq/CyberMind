@@ -124,15 +124,25 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                                 </span>
                                 <input
                                     type="number"
-                                    placeholder="0"
+                                    placeholder="6,00,000"
                                     {...register("minSalary", {
                                         required: "Min. salary is required",
+                                        min: {
+                                            value: 600000,
+                                            message:
+                                                "Min. salary cannot be less than ₹6,00,000",
+                                        },
+                                        max: {
+                                            value: 1200000,
+                                            message:
+                                                "Min. salary cannot exceed ₹12,00,000",
+                                        },
                                     })}
                                     className="w-full pl-8 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 />
                             </div>
                             {errors.minSalary && (
-                                <p className="text-red-500 ml-2 text-xs">
+                                <p className="text-red-500 mx-2 text-xs">
                                     {errors.minSalary.message}
                                 </p>
                             )}
@@ -154,12 +164,23 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                                     placeholder="12,00,000"
                                     {...register("maxSalary", {
                                         required: "Max. salary is required",
+                                        max: {
+                                            value: 1200000,
+                                            message:
+                                                "Max. salary cannot exceed ₹12,00,000",
+                                        },
+                                        validate: (value, formValues) =>
+                                            parseInt(value) >=
+                                                parseInt(
+                                                    formValues.minSalary
+                                                ) ||
+                                            "Max. salary must be greater than or equal to Min. salary",
                                     })}
                                     className="w-full border pl-8 border-gray-200 focus:outline-none focus:ring-1 focus:ring-black rounded-lg px-3 py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 />
                             </div>
                             {errors.maxSalary && (
-                                <p className="text-red-500 ml-2 text-xs">
+                                <p className="text-red-500 mx-2 text-xs">
                                     {errors.maxSalary.message}
                                 </p>
                             )}

@@ -26,10 +26,12 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
 
         const matchesJobType =
             !jobType || job.jobType.toLowerCase() === jobType.toLowerCase();
+
         const matchesSalary =
             !salaryRange ||
             (job.maxSalary / 12 >= salaryRange[0] &&
                 job.maxSalary / 12 <= salaryRange[1]);
+
         return (
             matchesSearch && matchesLocation && matchesJobType && matchesSalary
         );
@@ -44,9 +46,11 @@ const Jobs = ({ searchQuery, location, jobType, salaryRange }) => {
             </div>
         );
     }
+
     if (filteredJobs.length === 0) {
         return <NoJobs />;
     }
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-12 max-w-[90%] lg:max-w-[80%] mx-auto">
             {filteredJobs.map((job) => (

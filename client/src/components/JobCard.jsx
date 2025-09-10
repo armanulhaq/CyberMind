@@ -3,7 +3,6 @@ const JobCard = ({ job }) => {
         const postDate = new Date(dateString);
         const now = new Date();
         const diff = now - postDate;
-        console.log(diff);
         if (diff < 60 * 60 * 1000) {
             return "Just now";
         }
@@ -13,7 +12,6 @@ const JobCard = ({ job }) => {
     function LPA(salary) {
         return salary / 100000;
     }
-    console.log(job.createdAt);
     return (
         <div className="bg-white rounded-2xl border text-[#5a5a5a] border-gray-100 p-5 justify-between relative flex flex-col gap-4 shadow-[0px_0px_14px_0px_rgba(211,211,211,0.15)]">
             <div className="flex items-center gap-3">
