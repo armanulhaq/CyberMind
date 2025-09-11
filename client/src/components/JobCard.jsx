@@ -21,7 +21,7 @@ const JobCard = ({ job }) => {
                             job.companyImage ? job.companyImage : "/Company.png"
                         }
                         alt="Company Logo"
-                        className="h-11 w-11 rounded-full object-contain bg-white border border-gray-100 shadow"
+                        className="h-11 w-11 rounded-full object-contain bg-white"
                     />
                 </div>
                 <div className="absolute top-4 right-4 bg-[#B0D9FF] text-xs font-medium p-2 rounded-lg shadow-sm text-[#232323]">
