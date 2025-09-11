@@ -4,6 +4,7 @@ const jobSchema = new mongoose.Schema(
     {
         jobTitle: { type: String, required: true },
         companyName: { type: String, required: true },
+        companyImage: { type: String, required: false, default: "" },
         location: {
             type: String,
             enum: [

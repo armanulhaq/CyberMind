@@ -12,7 +12,7 @@ const Navbar = ({ setIsCreateJobOpen }) => {
                 <li className="hidden lg:block cursor-pointer hover:text-[#A128FF]">
                     Home
                 </li>
-                <li className="hidden md:block cursor-pointer hover:text-[#A128FF]">
+                <li className="cursor-pointer hover:text-[#A128FF]">
                     Find Jobs
                 </li>
                 <li className="hidden md:block cursor-pointer hover:text-[#A128FF]">

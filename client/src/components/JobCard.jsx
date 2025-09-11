@@ -17,7 +17,9 @@ const JobCard = ({ job }) => {
             <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-gradient-to-b from-[#FEFEFD] to-[#F1F1F1] p-2 rounded-xl border border-white shadow-[0px_0px_20px_0px_rgba(211,211,211,0.55)]">
                     <img
-                        src="/Company.png"
+                        src={
+                            job.companyImage ? job.companyImage : "/Company.png"
+                        }
                         alt="Company Logo"
                         className="h-11 w-11 rounded-full object-contain bg-white border border-gray-100 shadow"
                     />
