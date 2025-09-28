@@ -170,6 +170,7 @@ export default function CreateJobOpening({ setIsCreateJobOpen }) {
                                                 "Max. salary cannot exceed ₹12,00,000",
                                         },
                                         validate: (value, formValues) =>
+                                            //checking if current value is greater than or equal to minSalary
                                             parseInt(value) >=
                                                 parseInt(
                                                     formValues.minSalary

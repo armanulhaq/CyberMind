@@ -12,7 +12,11 @@ const port = process.env.PORT || 3000;
 connectDB();
 
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(
+    cors({
+        origin: `${process.env.CLIENT_URL}` | "http://localhost:5173",
+    })
+);
 
 app.get("/", (req, res) => {
     res.send("API is working fine!");

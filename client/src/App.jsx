@@ -12,7 +12,10 @@ function App() {
 
     const handleOverlayClick = (e) => {
         // Only close if clicking the overlay itself, not the modal content
+        //e.target is the element that was actaully clicked
+        //e.currentTarget is the element that the event listener is attached to
         if (e.target === e.currentTarget) {
+            //if click outside the modal, condition fulfils and setIsCreateJobOpen is set to false
             setIsCreateJobOpen(false);
         }
     };

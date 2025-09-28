@@ -28,7 +28,7 @@ const FilterBar = ({
                 <img src="/MapPin.png" alt="Location" className="w-4" />
                 <div className="relative w-full">
                     <select
-                        className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent font-medium text-base leading-none"
+                        className="w-full text-[#686868] outline-none pr-6 bg-transparent"
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                     >
@@ -51,7 +51,7 @@ const FilterBar = ({
                 <img src="/User.png" alt="Job Type" className="w-5" />
                 <div className="relative w-full">
                     <select
-                        className="w-full appearance-none text-[#686868] outline-none pr-6 bg-transparent font-medium text-base leading-none"
+                        className="w-full text-[#686868] outline-none pr-6 bg-transparent"
                         value={jobType}
                         onChange={(e) => setJobType(e.target.value)}
                     >
